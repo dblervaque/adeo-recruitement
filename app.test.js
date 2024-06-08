@@ -41,7 +41,8 @@ describe('filter test', () => {
       ],
     );
   });
-});  it('should return an array with animal names containing the filter "Duck"', () => {
+
+  it('should return an array with animal names containing the filter "Duck"', () => {
     const result = handleAnimalNameFiltering(data, 'Duck');
 
     assert.deepEqual(
