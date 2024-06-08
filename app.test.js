@@ -3,7 +3,10 @@ const assert = require('node:assert');
 
 const { data } = require('./data');
 
-const { handleAnimalNameFiltering } = require('./app');
+const {
+  handleAnimalNameFiltering,
+  countAndWriteInName,
+} = require('./app');
 
 describe('filter test', () => {
   it('should return an array with animal names containing the filter "ry"', () => {

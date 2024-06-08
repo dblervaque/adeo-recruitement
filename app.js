@@ -31,6 +31,18 @@ const handleAnimalNameFiltering = (data, filterValue) => {
   }).filter((location) => location !== null);
 };
 
+/**
+ * Function that counts the number of elements in an array and writes it in the original name.
+ * @param {string} originalName - Original name to write the count.
+ * @param {Array} arrayToCount - Array to count the elements.
+ * @returns {string} - Returns the original name with the count in brackets.
+ */
+const countAndWriteInName = (originalName, arrayToCount) => {
+  const count = arrayToCount.length;
+  return `${originalName} [${count}]`;
+};
+
 module.exports = {
   handleAnimalNameFiltering,
+  countAndWriteInName,
 };
