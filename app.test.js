@@ -98,3 +98,23 @@ describe('filter test', () => {
     );
   })
 });
+
+describe('[Function] countAndWriteInName', () => {
+  it('should return the number of people for the first country', () => {
+    const result = countAndWriteInName(data[0].name, data[0].people);
+
+    assert.strictEqual(result, 'Dillauti [5]');
+  });
+
+  it('should return the number of people for the second country', async () => {
+    const result = countAndWriteInName(data[1].name, data[1].people);
+
+    assert.strictEqual(result, 'Tohabdal [8]');
+  });
+
+  it('should return the number of animals for the first person in the first country', () => {
+    const result = countAndWriteInName(data[0].people[0].name, data[0].people[0].animals);
+
+    assert.strictEqual(result, 'Winifred Graham [6]');
+  });
+})
