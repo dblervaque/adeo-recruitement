@@ -1,0 +1,19 @@
+{
+  "name": "adeo-recruitement",
+  "version": "1.0.0",
+  "description": "## Filter",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dblervaque/adeo-recruitement.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dblervaque/adeo-recruitement/issues"
+  },
+  "homepage": "https://github.com/dblervaque/adeo-recruitement#readme"
+}
