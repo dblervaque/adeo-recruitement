@@ -7,6 +7,7 @@
  * @param {Array} data.people[].animals - Array containing data about the animals.
  * @param {string} data.people[].animals[].name - Name of the animal.
  * @param {string} filterValue - Value to filter the animal names.
+ * @returns {Array} - Returns the data array filtered by the animal names.
  */
 const handleAnimalNameFiltering = (data, filterValue) => {
   return data.map(location => {
@@ -42,7 +43,27 @@ const countAndWriteInName = (originalName, arrayToCount) => {
   return `${originalName} [${count}]`;
 };
 
+/**
+ * Function that maps the data and appends the count in the names.
+ * @param {Array} data - Array containing data about location, people and animals.
+ * @returns {Array} - Returns the data with the count appended in the names.
+ */
+const mapAndAppendCountInNames = (data) => {
+  return data.map((country) => {
+    return {
+      name: countAndWriteInName(country.name, country.people),
+      people: country.people.map((person) => {
+        return {
+          name: countAndWriteInName(person.name, person.animals),
+          animals: person.animals,
+        };
+      }),
+    };
+  });
+};
+
 module.exports = {
   handleAnimalNameFiltering,
   countAndWriteInName,
+  mapAndAppendCountInNames,
 };
