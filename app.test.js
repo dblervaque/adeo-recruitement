@@ -41,4 +41,60 @@ describe('filter test', () => {
       ],
     );
   });
+});  it('should return an array with animal names containing the filter "Duck"', () => {
+    const result = handleAnimalNameFiltering(data, 'Duck');
+
+    assert.deepEqual(
+      result,
+      [
+        {
+          name: 'Dillauti',
+          people: [
+            {
+              name: 'Winifred Graham',
+              animals: [
+                {
+                  name: 'Duck',
+                },
+              ],
+            },
+            {      
+              name: 'Louise Pinzauti',
+              animals: [
+                {
+                  name: 'Duck',
+                }
+              ]
+            }
+          ],
+        },
+        {
+          name: 'Tohabdal',
+          people: [
+            {
+              name: 'Alexander Fleury',
+              animals: [
+                {
+                  name: 'Duck',
+                },
+              ],
+            },
+          ],
+        },
+        {
+          name: 'Uzuzozne',
+          people: [
+            {
+              name: 'Lina Allen',
+              animals: [
+                {
+                  name: 'Duck',
+                },
+              ],
+            }
+          ]
+        }
+      ],
+    );
+  })
 });
