@@ -10,26 +10,17 @@
  * @returns {Array} - Returns the data array filtered by the animal names.
  */
 const handleAnimalNameFiltering = (data, filterValue) => {
-  return data.map(location => {
-    const people = location.people.map(person => {
-      const animals = person.animals.filter(animal => animal.name.includes(filterValue));
-      if (animals.length === 0) {
-        return null;
-      }
-      return {
-        name: person.name,
-        animals,
-      };
-    }).filter(person => person !== null);
-
-    if (people.length === 0) {
-      return null;
-    }
-    return {
-      name: location.name,
-      people,
-    };
-  }).filter((location) => location !== null);
+  return data
+    .map(({ people, ...location }) => ({
+      ...location,
+      people: people
+        .map(({ animals, ...person }) => ({
+          ...person,
+          animals: animals.filter(({ name }) => name.includes(filterValue)),
+        }))
+        .filter(({ animals}) => animals.length > 0)
+    }))
+    .filter(({ people }) => people.length > 0);
 };
 
 module.exports = {
