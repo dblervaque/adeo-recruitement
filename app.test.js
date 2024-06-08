@@ -1,11 +1,13 @@
-const { describe, it } = require('test');
-const assert = require('assert');
+const { describe, it } = require('node:test');
+const assert = require('node:assert');
 
-const data = require('./data');
+const { data } = require('./data');
+
+const { handleAnimalNameFiltering } = require('./app');
 
 describe('filter test', () => {
   it('should return an array with animal names containing the filter "ry"', () => {
-    const result = myFilterFunction(data, 'ry');
+    const result = handleAnimalNameFiltering(data, 'ry');
 
     assert.deepEqual(
       result,
