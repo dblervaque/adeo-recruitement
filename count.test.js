@@ -2,9 +2,7 @@ const {
   describe,
   it,
 } = require('node:test');
-const {
-  assert,
-} = require('node:assert');
+const assert = require('node:assert');
 
 const { data } = require('./data');
 
