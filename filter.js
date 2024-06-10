@@ -9,8 +9,8 @@
  * @param {string} filterValue - Value to filter the animal names.
  * @returns {Array} - Returns the data array filtered by the animal names.
  */
-const handleAnimalNameFiltering = (data, filterValue) => {
-  return data
+const handleAnimalNameFiltering = (data, filterValue) => (
+  data
     .map(({ people, ...location }) => ({
       ...location,
       people: people
@@ -20,8 +20,8 @@ const handleAnimalNameFiltering = (data, filterValue) => {
         }))
         .filter(({ animals}) => animals.length > 0)
     }))
-    .filter(({ people }) => people.length > 0);
-};
+    .filter(({ people }) => people.length > 0)
+  );
 
 module.exports = {
   handleAnimalNameFiltering,
