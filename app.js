@@ -1,12 +1,9 @@
-const { argv } = require('node:process');
-
-const { mapAndAppendCountInNames  } = require('./cli/count/count');
-const { handleAnimalNameFiltering } = require('./cli/filter/filter');
-
+// Description: This file is the entry point of the CLI.
 const { data } = require('./data');
-const { Cli } = require('./cli/cli');
+const { createCli } = require('./cli/cli');
 
-const cli = new Cli(process.argv, data);
+const cli = createCli(process.argv);
+cli.initializeData(data);
 
 const result = cli.run();
 
