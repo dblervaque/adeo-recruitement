@@ -1,5 +1,21 @@
 # Javascript developer test
 
+## Dependencies
+
+- Node.js 20.x
+
+## Tests
+
+`node --test` || `npm test`
+
+With code coverage
+
+`node --test --experimental-test-coverage`
+
+I choose to use this library because I wanted to try it.
+
+My thoughts: it's a good first step for running tests but there is some side things missing and not as good as Jest or Mocha.
+
 ## Filter
 
 Your job is to write a command-line interface in Node.js. 
