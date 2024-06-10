@@ -1,7 +1,7 @@
 const { describe, it } = require('node:test');
 const assert = require('node:assert');
 
-const { data } = require('./data');
+const { data } = require('../../data');
 
 const {
   handleAnimalNameFiltering,

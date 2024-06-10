@@ -1,6 +1,6 @@
-const { extractFilterArgument, extractCountArgument } = require('./utils');
-const { handleAnimalNameFiltering } = require('./filter');
-const { mapAndAppendCountInNames } = require('./count');
+const { extractFilterArgument, extractCountArgument } = require('./utils/utils');
+const { handleAnimalNameFiltering } = require('./filter/filter');
+const { mapAndAppendCountInNames } = require('./count/count');
 
 /**
  * Class representing the CLI.
