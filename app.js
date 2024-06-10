@@ -1,23 +1,13 @@
 const { argv } = require('node:process');
 
-const { mapAndAppendCountInNames  } = require('./count');
-const { handleAnimalNameFiltering } = require('./filter');
+const { mapAndAppendCountInNames  } = require('./cli/count/count');
+const { handleAnimalNameFiltering } = require('./cli/filter/filter');
 
 const { data } = require('./data');
+const { Cli } = require('./cli/cli');
 
-const main = () => {
-  argv.forEach((argument) => {
-    if (argument.startsWith('--filter=')) {
-      const filterValue = argument.split('=')[1];
-      const filteredData = handleAnimalNameFiltering(data, filterValue);
-      console.log(JSON.stringify(filteredData, null, 2));
-    }
+const cli = new Cli(process.argv, data);
 
-    if (argument.startsWith('--count')) {
-      const dataWithCount = mapAndAppendCountInNames(data);
-      console.log(JSON.stringify(dataWithCount, null, 2));
-    }
-  });
-}
+const result = cli.run();
 
-main();
+console.log(JSON.stringify(result, null, 2));
