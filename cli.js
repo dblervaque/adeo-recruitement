@@ -1,4 +1,6 @@
 const { extractFilterArgument, extractCountArgument } = require('./utils');
+const { handleAnimalNameFiltering } = require('./filter');
+const { mapAndAppendCountInNames } = require('./count');
 
 /**
  * Class representing the CLI.
@@ -37,7 +39,17 @@ class Cli {
    * appended to the names depending on the arguments passed.
    */
   run() {
-    console.log('Cli run');
+    let filteredData = this.data;
+
+    if (this.filterValue) {
+      filteredData = handleAnimalNameFiltering(filteredData, this.filterValue);
+    }
+
+    if (this.shouldCount) {
+      filteredData = mapAndAppendCountInNames(filteredData);
+    }
+
+    return filteredData;
   }
 }
 
