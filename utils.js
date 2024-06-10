@@ -11,6 +11,17 @@ const extractFilterArgument = (arguments) => {
   return filterArgument ? filterArgument.split('=')[1] || '' : undefined;
 }
 
+/**
+ * Function to extract the count argument.
+ * 
+ * @param {Array} arguments - Arguments passed to the script. Should be from process.argv.
+ * @returns {boolean} - Returns true if the count argument is present, otherwise false.
+ */
+const extractCountArgument = (arguments) => {
+  return arguments.includes('--count');
+}
+
 module.exports = {  
   extractFilterArgument,
+  extractCountArgument,
 };

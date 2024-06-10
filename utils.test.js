@@ -3,6 +3,7 @@ const assert = require('node:assert');
 
 const {
   extractFilterArgument,
+  extractCountArgument,
 } = require('./utils');
 
 describe('utils test', () => {
