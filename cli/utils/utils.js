@@ -8,7 +8,9 @@
  */
 const extractFilterArgument = (arguments) => {
   const filterArgument = arguments.find((arg) => arg.includes('--filter'));
-  return filterArgument ? filterArgument.split('=')[1] || '' : undefined;
+  return filterArgument
+    ? filterArgument.split('=')[1] || ''
+    : undefined;
 }
 
 /**
