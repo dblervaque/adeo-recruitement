@@ -10,6 +10,7 @@ describe('[Class] CLI', () => {
 
       assert.strictEqual(cli.filterValue, undefined);
       assert.strictEqual(cli.shouldCount, false);
+      assert.strictEqual(cli.data.length, 0);
     });
 
     it('should return an instance of CLI with hasFilterArgument set to true and hasCountArgument set to false', () => {
@@ -21,6 +22,7 @@ describe('[Class] CLI', () => {
 
       assert.strictEqual(cli.filterValue, 'ry');
       assert.strictEqual(cli.shouldCount, false);
+      assert.strictEqual(cli.data.length, 0);
     });
 
     it('should return an instance of CLI with hasFilterArgument set to false and hasCountArgument set to true', () => {
@@ -32,6 +34,7 @@ describe('[Class] CLI', () => {
 
       assert.strictEqual(cli.filterValue, undefined);
       assert.strictEqual(cli.shouldCount, true);
+      assert.strictEqual(cli.data.length, 0);
     });
 
     it('should return an instance of CLI with hasFilterArgument and hasCountArgument set to true', () => {
@@ -44,6 +47,7 @@ describe('[Class] CLI', () => {
 
       assert.strictEqual(cli.filterValue, 'ry');
       assert.strictEqual(cli.shouldCount, true);
+      assert.strictEqual(cli.data.length, 0);
     });
   });
 });
